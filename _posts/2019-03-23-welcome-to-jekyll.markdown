@@ -21,7 +21,87 @@ rzp.capture(payment_id, cost)
 	})
 ```
 
+This is an H1
+=============
+
+# This is a H1
+## This is a H2
+### This is a H3
+#### This is a H4
+##### This is a H5
+###### This is a H6
+
+> This is a first blockqute.
+>	> This is a second blockqute.
+>	>	> This is a third blockqute.
+
+1. 첫번째
+2. 두번째
+3. 세번째
+
+* 빨강
+  * 녹색
+    * 파랑
+
++ 빨강
+  + 녹색
+    + 파랑
+
+- 빨강
+  - 녹색
+    - 파랑
+
+
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+This is a normal paragraph:
+
+	This is a code block.
+    
+end code block.
+
+<pre>
+<code>
+public class BootSpringBootApplication {
+  public static void main(String[] args) {
+    System.out.println("Hello, Honeymon");
+  }
+
+}
+</code>
+</pre>
+
+```java
+public class BootSpringBootApplication {
+  public static void main(String[] args) {
+    System.out.println("Hello, Honeymon");
+  }
+}
+```
+
+```swift
+func test() {
+	let a: String = "asd"
+}
+```
+
+```
+func test() {
+	let a: String = "asd"
+}
+```
+
+
+* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
