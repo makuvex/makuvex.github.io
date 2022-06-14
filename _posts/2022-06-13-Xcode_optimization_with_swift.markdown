@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Xcode 컴파일 시간 및 런타임 실행 속도 높이기(swift)"
+date:   2022-06-13 13:45:35 +0900
+categories: Xcode
+---
+
 # Xcode 컴파일 시간 및 런타임 실행 속도 높이기(swift)
  
 ## Code Optimizations(아래의 내용은 컴파일러 속도 최적화에만 관련된 부분이고 가독성 및 모듈화와 상충되는 부분이 있기 때문에 적절히 사용 )
@@ -7,7 +14,7 @@
 ### 각각의 파일에 코드가 정의되어 있어 컴파일시 모두 시간이 소용됨. 아래와 같이 extension 파일을 작성하고 사용시에는 확장파일에만 컴파일 시간이 소요되고 복사됨.
 
 
-```
+```swift
 // Bad: Writing isValidEmail variable twice
 class LoginViewController: UIViewController {
 	//...
