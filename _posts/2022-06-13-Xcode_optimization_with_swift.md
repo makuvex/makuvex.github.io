@@ -94,7 +94,9 @@ final class FilterCell: UITableViewCell {
 ```
 
 ### 3. 가능하면 let(Immutable)를 사용
-### 4. 상속 받기를 원하지 않는 class 앞에 final keyword 붙히기
+### 4. 상속 받기를 원하지 않는 class, property 앞에 final keyword 붙히기
+>final이나 private로 선언된 메소드나 프로퍼티는, 컴파일 시간에 static하게 처리되기에,
+런타임에 주소 탐색 시간을 절약하여 성능에 큰 도움을 준다.
 ### 5. 연관 파일에 같이 선언된 extension은 private or fileprivate 키워드를 붙여라
 
 ```swift
@@ -255,6 +257,13 @@ if let leftView = leftView {
 
 return CGSizeMake(size.width + padding, bounds.height)
 ```
+
+### 11. class보단 struct
+>참조 타입: 
+힙을 할당하여, 힙에서 빈곳을 찾는 시간 + thread safe를 위한 동기화 시간이 필요하며, reference count가 존재
+
+>값 타입 :
+단순히 스택포인터 변수를 조절하는 시간이 필요하며, refenrence count 없음
 
 ##### Storyboard Optimization
 >1. 하나의 스토리 보드에 너무 많은 scene,  viewController를 사용하지 말고 각각의 파일로 분리해서 사용
