@@ -44,11 +44,38 @@ print(objcc.string)
 ```
 ---
 
-## 그럼 어떻게 할까요? 쬐금 보니까 moduleMap을 사용하는 방법이 괜찮은거 같은데 한번 알아보죠!
+## 그럼 어떻게 할까요? 좀 보니까 moduleMap을 사용하는 방법이 괜찮은거 같은데 한번 알아보죠!
 
-구글링 해도 나오는데 여기서는 직접 사용한 방법으로 작성하려 해요.
+- 아래 스샷의 ObjcTest 프로젝트가 objective-c로 만든 framework이고 SwiftTest 프로젝트가 swift작성한 framework입니다.
+- 빨간 박스로 표시한 부분이 이번에 다룰 내용이에요.
 
 ![](https://github.com/makuvex/makuvex.github.io/blob/main/assets/framework_shot1.png?raw=true)
 
+1. module.modulemap이란 이름으로 파일을 생성합니다.
+2. 연동 하고 싶은 public header로 모듈을 구성 합니다. framework이름이 ObjcTest.framework 이며 public header는  ObjcTestClass.h 에요
+```
+module ObjcTest {
+    header "ObjcTest.framework/Headers/ObjcTestClass.h"
+    export *
+}
+```
+3. xcconfig파일을 구성 합니다. 이름은 마음에 드는거로 샥샥~ 저는 config로 지었어요.  
+new. > ios -> other -> configuration settings file로 선택
+```
+SWIFT_INCLUDE_PATHS = $(SRCROOT)/
+MODULEMAP_PRIVATE_FILE = $(SRCROOT)/module.modulemap
+```
+4. ObjcTest.framework을 confif.xcconfig랑 module.modulemap 파일이랑 동일 경로에 놓고 아래와 같이 사용하면 되는거임
+```swift
+import ObjcTest
 
-[project](https://github.com/user/repo/blob/branch/other_file.md)
+let objc = ObjcTestClass()
+print("test1 \(objc.string)")
+```
+
+
+[project 링크](https://github.com/makuvex/makuvex.github.io/blob/main/assets/objcWithSwiftFramework_0704.zip)
+
+---
+## 기존 소스들이 objective-c로 작성되었고 swift로 컨버전을 하면서 혹은 새 기능은 swift로 작성할때 framework들로 모듈을 구성하여 사용하면 얻는 이점이 많음.
+## 그래서 이와 같은 형태로 legacy project들이 많이 구성되어 있는데 framework <-> framework 연동 방법에 대한 고민을 하던 중 이런 작업이 있어 기록 하려고 이렇게 구구절절 작성함 ㅠㅠ. 귀찮항~
