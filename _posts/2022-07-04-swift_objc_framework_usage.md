@@ -77,5 +77,6 @@ print("test1 \(objc.string)")
 [project 링크](https://github.com/makuvex/makuvex.github.io/blob/main/assets/objcWithSwiftFramework_0704.zip)
 
 ---
-## 기존 소스들이 objective-c로 작성되었고 swift로 컨버전을 하면서 혹은 새 기능은 swift로 작성할때 framework들로 모듈을 구성하여 사용하면 얻는 이점이 많음.
-## 그래서 이와 같은 형태로 legacy project들이 많이 구성되어 있는데 framework <-> framework 연동 방법에 대한 고민을 하던 중 이런 작업이 있어 기록 하려고 이렇게 구구절절 작성함 ㅠㅠ. 귀찮항~
+> 기존 소스들이 objective-c로 작성되었고 swift로 컨버전을 하면서 혹은 새 기능은 swift로 작성할때 framework들로 모듈을 구성하여 사용하면 얻는 이점이 많음.
+그래서 이와 같은 형태로 legacy project들이 많이 구성되어 있는데 framework <-> framework 연동 방법에 대한 고민을 하던 중 이런 작업이 있어 기록 하려고 이렇게 구구절절 작성함 ㅠㅠ. 귀찮항~
+---
