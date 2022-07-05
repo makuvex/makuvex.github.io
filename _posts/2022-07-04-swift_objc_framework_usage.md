@@ -73,17 +73,16 @@ import ObjcTest
 let objc = ObjcTestClass()
 print("test1 \(objc.string)")
 ```
-
-5. sym link사용하여 xcodeproj의 products로 연결하는 방법.   
-copy이외에 스크립트를 구성하여 심볼릭 링크를 생성하고 해당 프레임워크로 연동하는 방법도 있다.
+---
+### sym link사용하여 xcodeproj의 products로 연결하는 방법.   
+copy로 해당 프레임워크를 직접 복사하지 않고 스크립트를 구성하여 심볼릭 링크를 생성하고 해당 프레임워크로 연동하는 방법도 있다.
 ```
 ln -s "source" "destination"
 ```
 
 [project 링크](https://github.com/makuvex/makuvex.github.io/blob/main/assets/objcWithSwiftFramework_0704.zip)
 
-### 당연한 이야기 겠지만 private header, 혹은 objc category로 구성되고 public 하지 않는 모듈은 연동 할 수 없음. 
-### 또한 ObjcTest.framework를 sym link로 연동하지 못하고 카피로 구성하여 확인함. 추후 sym link 방법으로 하는 포스팅을 추가할 계획이얌.
+### 당연한 이야기 겠지만 private header, 혹은 objc category로 구성되고 public 하지 않는 모듈은 연동 할 수 없음. 또한 ObjcTest.framework를 sym link로 연동하지 못하고 카피로 구성하여 확인함. 추후 sym link 방법으로 하는 포스팅을 추가할 계획이얌.
 
 ---
 > 기존 소스들이 objective-c로 작성되었고 swift로 컨버전을 하면서 혹은 새 기능은 swift로 작성할때 framework들로 모듈을 구성하여 사용하면 얻는 이점이 많음.
