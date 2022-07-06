@@ -76,10 +76,10 @@ let objc = ObjcTestClass()
 print("test1 \(objc.string)")
 ```
 
-5. Swift Compiler - Search Paths에서 패스 추가하기
-Import Paths에 $(PROJECT_DIR) 추가
+5. Swift Compiler - Search Paths에서 Import Paths에 $(PROJECT_DIR) 추가
 
 ---
+
 ### sym link사용하여 xcodeproj의 products로 연결하는 방법.   
 copy로 해당 프레임워크를 직접 복사하지 않고 스크립트를 구성하여 심볼릭 링크를 생성하고 해당 프레임워크로 연동하는 방법도 있다.
 ```
