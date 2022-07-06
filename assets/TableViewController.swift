@@ -39,7 +39,7 @@ final class TableViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     private let networkingRelay: PublishRelay<Void> = PublishRelay<Void>()
-    private let updateTextViewRelay: PublishRelay<Result<HttpBinModel, Error>> = PublishRelay<Result<HttpBinModel, Error>>()
+    private let tableViewUpdateRelay: PublishRelay<Result<HttpBinModel, Error>> = PublishRelay<Result<HttpBinModel, Error>>()
     
     var tableViewDataArray: [String] = []
     
@@ -90,11 +90,11 @@ extension TableViewController {
                 let request = TestGetRequest(requestData: AuthRequestConfiguration(acceptCountry: "kr"), parameters: ["args" : "queryItemsTest"])
                 return AFBoltApiClient.requestObservable(request: request).asObservable()
             }
-            .bind(to: updateTextViewRelay)
+            .bind(to: tableViewUpdateRelay)
             .disposed(by: disposeBag)
 
         /// 2. api 결과를 받아서 테이블 뷰에 출력
-        updateTextViewRelay
+        tableViewUpdateRelay
             .asObservable()
             .map { result -> [String] in
                 switch result {
