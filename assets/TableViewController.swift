@@ -43,8 +43,6 @@ final class TableViewController: UIViewController {
     
     var tableViewDataArray: [String] = []
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,8 +70,8 @@ extension TableViewController {
     }
     
     func bindRxUI() {
-        /// 버튼을 누르면 토스트를 출력하고 네트워킹 api를 호출 한다.
-        /// api 결과를 받아서 테이블 뷰에 출력
+        /// 버튼을 누르면 토스트를 출력하고 백그라운드로 네트워킹 api를 호출 한다.
+        /// api 결과를 받아서 메인쓰레드로 전환하고 테이블 뷰에 출력
         /// 테이블뷰 셀을 선택 하면 indexPath의 row를 전달하여 토스트를 출력
         /// 그리고 스크롤을 맨위로 올린다.
         
@@ -159,7 +157,6 @@ extension TableViewController {
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
-
                         return
                     }
                     self.tableViewDataArray = dictionary.map { "\($0.key) \($0.value)" }
