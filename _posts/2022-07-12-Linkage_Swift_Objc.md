@@ -11,7 +11,8 @@ tags:
 ---
 
 # pdf로 작성한 내용이 있어 링크로 대체 한다 ㅎㅎㅎㅎㅎ
-<embed src="https://github.com/makuvex/makuvex.github.io/blob/main/assets/linkage_swift_objc.pdf" type="application/pdf">
+<object data="https://github.com/makuvex/makuvex.github.io/blob/main/assets/linkage_swift_objc.pdf" type="application/pdf" width="100%"> 
+</object>
 
 
 ### [내용 링크](https://github.com/makuvex/makuvex.github.io/blob/main/assets/linkage_swift_objc.pdf)
