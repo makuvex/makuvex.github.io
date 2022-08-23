@@ -10,9 +10,6 @@ tags:
   - framework
 ---
 
-# 원문은 아래의 내용입니다.
-### [내용 링크](https://developer.apple.com/library/archive/qa/qa1490/_index.html)
-
 Objective-C로 작성된 static framework를 사용하다 보면 런타임시에 "unrecognized selector sent to instance 0x00000a1d" 에러와 함께
 크래시가 발생하는 경우가 있다.
 
@@ -24,3 +21,5 @@ Dynamic한 특성을 제공하기 위해, Method가 호출되기 전까지 metho
 즉 class에 대한 symbol은 있지만, 카테고리로 정의한 method symbol은 없는 것이다.
 
 -ObjC라는 Linker Flag는 linker가 static library에 있는 모든 Objective-C로 작성된 class와 category를 load하도록 빌드 옵션을 설정해 주면 "unrecognized selector sent to instance " 크래시는 수정될수 있다.
+
+### [내용 링크](https://developer.apple.com/library/archive/qa/qa1490/_index.html)
