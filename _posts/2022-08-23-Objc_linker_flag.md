@@ -1,5 +1,5 @@
 ---
-title: "Linker flag -Objc"
+title: "Linker flag -Objc, -all_load"
 categories:
   - XCode
   - objective-c
